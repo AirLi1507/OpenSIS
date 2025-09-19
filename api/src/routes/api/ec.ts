@@ -1,6 +1,6 @@
 import express from "express"
-import { getAttendedEC, getAvailableEC, getRegisterExpiry, registerEC, setRegisterExpiry } from "../controllers/EC"
-import token from "../middleware/Token"
+import token from "../../middleware/Token"
+import { getAttendedEC, getAvailableEC, getRegisterExpiry, registerEC, setRegisterExpiry } from "../../controllers/EC"
 
 const server = express().router
 

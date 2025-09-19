@@ -1,6 +1,6 @@
 import express from "express"
-import token from "../middleware/Token"
-import { getProfile, getProfilePicture, getProfilePictureByUID } from "../controllers/User"
+import token from "../../middleware/Token"
+import { getProfile, getProfilePicture, getProfilePictureByUID } from "../../controllers/User"
 
 const server = express().router
 

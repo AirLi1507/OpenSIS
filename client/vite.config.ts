@@ -4,4 +4,16 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy:
+      (
+        process.env.NODE_ENV !== "production"
+          ?
+          {
+            "/api": "https://test-2.hypernix.dev/api"
+          }
+          :
+          undefined
+      )
+  }
 })

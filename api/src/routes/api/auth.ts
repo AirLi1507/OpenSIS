@@ -1,5 +1,5 @@
 import express from "express"
-import { loginUser, logoutUser, refreshUser } from "../controllers/Auth"
+import { loginUser, logoutUser, refreshUser } from "../../controllers/Auth"
 
 const server = express().router
 

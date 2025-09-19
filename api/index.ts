@@ -2,12 +2,13 @@ import { configDotenv } from "dotenv"
 import server from "./src/config/express"
 import logger from "./src/config/logger"
 import routes from "./src/routes"
+import path from "path"
 
-configDotenv()
+configDotenv({ path: path.join(__dirname, "../.env") })
 
 const { PORT, HOST } = process.env as { PORT?: string, HOST?: string }
 
-server.use("/v1", routes)
+server.use("/", routes)
 
 server.listen(
   (
