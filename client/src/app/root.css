@@ -1,0 +1,5 @@
+@reference "../index.css";
+
+.bg {
+  @apply bg-[url('https://cdn.hypernix.dev/img/bg.webp')] bg-no-repeat bg-cover
+}
