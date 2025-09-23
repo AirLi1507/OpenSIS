@@ -28,7 +28,7 @@ const Login = () => {
     return
   }
   return (
-    <form onSubmit={submit} className="w-60 m-auto bg-sky-200/20 rounded-lg shadow-md backdrop-blur-md backdrop-brightness-110 backdrop-saturate-125 flex flex-col gap-4 p-4 select-none">
+    <form onSubmit={submit} className="w-60 m-auto bg-sky-300/20 rounded-lg shadow-md backdrop-blur-md backdrop-brightness-110 backdrop-saturate-125 flex flex-col gap-4 p-4 select-none">
       <div className="mx-auto mt-4 mb-2">
         <Logo size={56} />
       </div>
