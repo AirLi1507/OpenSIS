@@ -17,5 +17,5 @@ a.anchor {
 }
 
 div.prompt {
-  @apply text-center text-sm bg-white/50 rounded-lg shadow-md backdrop-blur-md backdrop-brightness-110 backdrop-saturate-125 flex flex-col gap-4 p-3 select-none
+  @apply text-center text-sm mx-8 bg-white/50 rounded-lg shadow-md backdrop-blur-md backdrop-brightness-110 backdrop-saturate-125 flex flex-col gap-4 p-3 select-none
 }
