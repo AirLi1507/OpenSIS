@@ -3,3 +3,11 @@
 :root {
   font-family: "Ubuntu", "Noto Sans TC", sans-serif;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition-duration: 86400s;
+  transition-timing-function: linear;
+}
