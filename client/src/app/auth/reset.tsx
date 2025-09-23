@@ -10,7 +10,7 @@ const Reset = () => {
   const [success, setSuccess] = useState<boolean | undefined>()
   async function submit(e: React.FormEvent) {
     e.preventDefault()
-    const req = await fetch("/api/v1/auth/reset", {
+    const req = await fetch("/api/v1/account/reset", {
       method: "post",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -46,7 +46,7 @@ const Reset = () => {
             {
               success
                 ?
-                "Account has been reset successfully."
+                `Account reset link has been sent to ${email} successfully.`
                 :
                 "Could not reset your account, please try again later."
             }

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Root from "./app/root";
 import Login from "./app/auth/login";
 import Reset from "./app/auth/reset";
+import ResetPassword from "./app/auth/reset-password";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
           {
             path: "reset",
             Component: Reset
+          },
+          {
+            path: "reset-password",
+            Component: ResetPassword
           }
         ]
       }
