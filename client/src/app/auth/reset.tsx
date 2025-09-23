@@ -8,6 +8,7 @@ import "./index.css"
 const Reset = () => {
   const [email, setEmail] = useState<string>("")
   const [success, setSuccess] = useState<boolean | undefined>()
+
   async function submit(e: React.FormEvent) {
     e.preventDefault()
     const req = await fetch("/api/v1/account/reset", {
@@ -19,7 +20,9 @@ const Reset = () => {
       })
     })
     setSuccess(req.ok)
+    return
   }
+
   return (
     <div className="m-auto flex flex-col gap-4">
       <form onSubmit={submit} className="card">
