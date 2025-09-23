@@ -6,7 +6,12 @@ import unfont from "unplugin-fonts/vite"
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      babel: {
+        comments: false,
+        minified: true
+      }
+    }),
     tailwindcss(),
     unfont({
       google: {
@@ -30,10 +35,16 @@ export default defineConfig({
         process.env.NODE_ENV !== "production"
           ?
           {
-            "/api": "https://test-2.hypernix.dev/api"
+            "/api/v1": "https://test-3.hypernix.dev"
           }
           :
           undefined
       )
+  },
+  build: {
+    target: "esnext",
+    cssMinify: "lightningcss",
+    minify: "oxc",
+    emptyOutDir: true
   }
 })
