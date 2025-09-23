@@ -38,7 +38,8 @@ const requestReset = async (req: Request, res: Response) => {
         },
         process.env.JWT_SECRET || "fallback_secret",
         {
-          algorithm: "HS512"
+          algorithm: "HS512",
+          expiresIn: 60 * 60 * 1000
         }
       )
       sendResetLink(email, token)
