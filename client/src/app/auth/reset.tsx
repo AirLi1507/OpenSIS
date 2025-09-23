@@ -32,7 +32,7 @@ const Reset = () => {
           <input onChange={(e) => setEmail(e.target.value)} required type="email" placeholder="Email" className="w-full ml-1 outline-none" />
         </div>
         <button type="submit" className="submit">Reset</button>
-        <Link to="/auth/login">
+        <Link to="/auth/login" className="anchor">
           <IconSignLeft stroke={1.75} size={20} />
           <span>Go back</span>
         </Link>

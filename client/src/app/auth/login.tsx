@@ -57,7 +57,7 @@ const Login = () => {
         </button>
       </div>
       <button type="submit" className="submit">Login</button>
-      <Link to="/auth/reset">
+      <Link to="/auth/reset" className="anchor">
         <IconLockQuestion stroke={1.75} size={20} />
         <span>Forget Password?</span>
       </Link>

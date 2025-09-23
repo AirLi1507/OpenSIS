@@ -1,0 +1,5 @@
+@reference "../../index.css";
+
+a.tab {
+  @apply w-60 rounded-full flex gap-2 items-center p-4 py-3 duration-250
+}
