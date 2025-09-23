@@ -3,7 +3,7 @@ import mysql2, { PoolOptions } from "mysql2/promise"
 import logger from "./logger"
 import path from "path"
 
-configDotenv({ path: path.join(__dirname, "../.env") })
+configDotenv({ path: path.join(__dirname, "../../../.env") })
 
 const {
   MYSQL_USER,

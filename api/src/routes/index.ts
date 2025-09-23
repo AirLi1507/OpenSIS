@@ -4,7 +4,7 @@ import apiRoutes from "./api"
 
 const router = express().router
 
-router.use("/", clientRoutes)
 router.use("/api/v1", apiRoutes)
+router.use("/", clientRoutes)
 
 export default router
