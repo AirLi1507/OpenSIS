@@ -1,7 +1,7 @@
 @reference "../../index.css";
 
 nav {
-  @apply bg-sky-50/25 shadow-lg flex flex-col px-4 pb-4
+  @apply bg-sky-50/25 shadow-lg flex flex-col px-4 pb-4 box-border overflow-scroll
 }
 
 a.tab {
