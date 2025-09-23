@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
 import helmet from "helmet"
+import limiter from "./rate-limiter"
 const server = express()
 
 server.use(express.urlencoded({ extended: true, limit: "2mb" }))
@@ -21,5 +22,6 @@ server.use(helmet({
     }
   }
 }))
+server.use(limiter)
 
 export default server
