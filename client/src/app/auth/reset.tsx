@@ -1,9 +1,9 @@
-import { IconMail, IconSignLeft } from "@tabler/icons-react"
-import Title from "../../components/brand/title"
-import "./index.css"
 import { useState } from "react"
 import Logo from "../../components/brand/logo"
+import Title from "../../components/brand/title"
 import { Link } from "react-router"
+import { IconMail, IconSignLeft } from "@tabler/icons-react"
+import "./index.css"
 
 const Reset = () => {
   const [email, setEmail] = useState<string>("")

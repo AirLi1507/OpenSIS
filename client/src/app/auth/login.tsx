@@ -1,16 +1,18 @@
-import { IconEye, IconEyeOff, IconKey, IconLockQuestion, IconUser } from "@tabler/icons-react"
 import { useState } from "react"
 import { useNavigate } from "react-router"
 import Logo from "../../components/brand/logo"
-import "./index.css"
 import Title from "../../components/brand/title"
 import { Link } from "react-router"
+import { IconEye, IconEyeOff, IconKey, IconLockQuestion, IconUser } from "@tabler/icons-react"
+import "./index.css"
 
 const Login = () => {
   const [uid, setUid] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [visible, setVisible] = useState<boolean>(false)
+
   const navigate = useNavigate()
+
   async function submit(e: React.FormEvent) {
     e.preventDefault()
     const request = await fetch("/api/v1/auth/login", {
@@ -30,6 +32,7 @@ const Login = () => {
     }
     return
   }
+
   return (
     <form onSubmit={submit} className="card">
       <div className="mx-auto mt-4 mb-2">

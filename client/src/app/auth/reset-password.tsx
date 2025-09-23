@@ -1,9 +1,9 @@
-import { IconPassword, IconZoomCheck } from "@tabler/icons-react"
-import "./index.css"
 import { useState } from "react"
 import { useNavigate, useSearchParams } from "react-router"
 import Logo from "../../components/brand/logo"
 import Title from "../../components/brand/title"
+import { IconPassword, IconZoomCheck } from "@tabler/icons-react"
+import "./index.css"
 
 const ResetPassword = () => {
   const [password, setPassword] = useState<string>("")

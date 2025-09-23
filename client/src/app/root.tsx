@@ -1,6 +1,6 @@
 import { Outlet, useNavigate } from "react-router"
-import "./root.css"
 import { useEffect } from "react"
+import "./root.css"
 
 const Root = () => {
   const navigate = useNavigate()
