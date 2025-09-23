@@ -1,4 +1,4 @@
-import express from "express"
+import express, { Request, Response, NextFunction } from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
 import helmet from "helmet"
@@ -19,8 +19,7 @@ server.use(helmet({
         "'unsafe-inline'"
       ]
     }
-  },
-  hidePoweredBy: true
+  }
 }))
 
 export default server
