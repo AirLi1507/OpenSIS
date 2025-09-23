@@ -67,7 +67,7 @@ const Sidebar = () => {
         <Tab to="#" icon={IconUser} text={
           Number(role) > 1
             ?
-            `${chi_name && chi_name} ${eng_name}`
+            `${chi_name && chi_name} ${t("user.teacher")} ${eng_name}`
             :
             `${form}${className}-${classNo} ${chi_name && chi_name} ${eng_name}`
         } />

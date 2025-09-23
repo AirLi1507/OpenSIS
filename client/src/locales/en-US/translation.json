@@ -10,7 +10,12 @@
     "new_pw": "New Password",
     "confirm_pw": "Confirm Password",
     "confirm": "Confirm",
-    "logout": "Logout"
+    "logout": "Logout",
+    "email_sent": "Account reset link has been sent to the following email successfully: ",
+    "email_error": "Could not reset your account, please try again later.",
+    "pw_mismatch": "Password mismatch!",
+    "reset_success": "Password has been reset successfully.",
+    "reset_error": "Could not reset password, please try again later."
   },
   "tab_name": {
     "home": "Home",
@@ -22,5 +27,9 @@
     "album": "Album",
     "admin": "Administration",
     "settings": "Settings"
+  },
+  "user": {
+    "student": "",
+    "teacher": ""
   }
 }

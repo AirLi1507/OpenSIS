@@ -23,6 +23,7 @@ const ResetPassword = () => {
     if (consistence != undefined) {
       document.querySelector("button")!.disabled = consistence
     }
+    return
   }
 
   async function submit(e: React.FormEvent) {
@@ -40,7 +41,7 @@ const ResetPassword = () => {
       })
     })
     setSuccess(req.ok)
-    setTimeout(() => navigate("/auth/login"), 5000)
+    setTimeout(() => navigate("/auth/login"), 3000)
     return
   }
 
@@ -73,7 +74,7 @@ const ResetPassword = () => {
               :
 
               <div className="text-rose-700 prompt">
-                Passwords mismatch!
+                {t("auth.pw_mismatch")}
               </div>
           )
       }
@@ -86,9 +87,9 @@ const ResetPassword = () => {
             {
               success
                 ?
-                "Password has been reset successfully."
+                t("auth.reset_success")
                 :
-                "Could not reset password, please try again later."
+                t("auth.reset_error")
             }
           </div>
       }

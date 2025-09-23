@@ -10,7 +10,12 @@
     "new_pw": "新密碼",
     "confirm_pw": "確認密碼",
     "confirm": "確認",
-    "logout": "登出"
+    "logout": "登出",
+    "email_sent": "密碼重設連結已郵寄至: ",
+    "email_error": "未能郵寄重設連結到你的電子郵件，請稍後再試",
+    "pw_mismatch": "密碼不相同！",
+    "reset_success": "密碼重設成功",
+    "reset_error": "未能重設密碼，請稍後再試"
   },
   "tab_name": {
     "home": "首頁",
@@ -22,5 +27,9 @@
     "album": "相簿",
     "admin": "管理",
     "settings": "設定"
+  },
+  "user": {
+    "student": "學生",
+    "teacher": "老師"
   }
 }

@@ -52,9 +52,9 @@ const Reset = () => {
             {
               success
                 ?
-                `Account reset link has been sent to ${email} successfully.`
+                `${t("auth.email_sent")}${email}`
                 :
-                "Could not reset your account, please try again later."
+                t("auth.email_error")
             }
           </div>
       }
