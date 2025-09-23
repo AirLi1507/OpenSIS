@@ -9,9 +9,13 @@ div.textbox {
 }
 
 button.submit {
-  @apply text-sky-800/85 hover:text-white font-bold bg-white/50 hover:bg-sky-600/75 rounded-sm shadow-sm duration-250 p-2 cursor-pointer
+  @apply text-sky-800/85 hover:text-white disabled:text-zinc-400 font-bold bg-white/50 hover:bg-sky-600/75 disabled:bg-zinc-100 rounded-sm shadow-sm duration-250 p-2 cursor-pointer disabled:cursor-not-allowed
 }
 
 a {
   @apply text-sky-800/85 hover:text-sky-50 text-sm font-semibold w-fit -my-0.5 hover:drop-shadow-[1px_1px_0.5px_rgba(0,0,0,.25)] flex gap-1 duration-100
+}
+
+div.prompt {
+  @apply text-center text-sm bg-white/50 rounded-lg shadow-md backdrop-blur-md backdrop-brightness-110 backdrop-saturate-125 flex flex-col gap-4 p-3 select-none
 }

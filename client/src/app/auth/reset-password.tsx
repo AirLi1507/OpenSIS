@@ -14,6 +14,14 @@ const ResetPassword = () => {
 
   const navigate = useNavigate()
 
+  function consistencyCheck() {
+    const input = document.querySelectorAll("input")
+    setConsistence(input[0].value === input[1].value)
+    if (consistence != undefined) {
+      document.querySelector("button")!.disabled = consistence
+    }
+  }
+
   async function submit(e: React.FormEvent) {
     e.preventDefault()
     if (!consistence) {
@@ -32,6 +40,7 @@ const ResetPassword = () => {
     setTimeout(() => navigate("/auth/login"), 5000)
     return
   }
+
   return (
     <div className="m-auto flex flex-col gap-4">
       <form onSubmit={submit} className="card">
@@ -41,11 +50,11 @@ const ResetPassword = () => {
         <Title />
         <div className="text-sky-700/85 textbox">
           <IconPassword />
-          <input onChange={(e) => setPassword(e.target.value)} required placeholder="New Password" className="w-full ml-1 outline-none" />
+          <input onChange={(e) => { setPassword(e.target.value); consistencyCheck() }} required placeholder="New Password" className="w-full ml-1 outline-none" />
         </div>
         <div className="text-sky-700/85 textbox">
           <IconZoomCheck />
-          <input onChange={(e) => setConsistence(password === e.target.value)} required placeholder="Confirm Password" className="w-full ml-1 outline-none" />
+          <input onChange={consistencyCheck} required placeholder="Confirm Password" className="w-full ml-1 outline-none" />
         </div>
         <button className="submit">Confirm</button>
       </form>
@@ -60,7 +69,7 @@ const ResetPassword = () => {
               null
               :
 
-              <div className="text-rose-700 text-sm w-fit m-auto bg-white/50 rounded-lg shadow-md backdrop-blur-md backdrop-brightness-110 backdrop-saturate-125 flex flex-col gap-4 p-3 select-none">
+              <div className="text-rose-700 prompt">
                 Passwords mismatch!
               </div>
           )
@@ -70,7 +79,7 @@ const ResetPassword = () => {
           ?
           null
           :
-          <div className={`${success ? "text-emerald-600" : "text-rose-700"} text-sm w-fit m-auto bg-white/50 rounded-lg shadow-md backdrop-blur-md backdrop-brightness-110 backdrop-saturate-125 flex flex-col gap-4 p-3 select-none`}>
+          <div className={`${success ? "text-emerald-600" : "text-rose-700"} prompt`}>
             {
               success
                 ?
@@ -79,7 +88,6 @@ const ResetPassword = () => {
                 "Could not reset password, please try again later."
             }
           </div>
-
       }
     </div>
   )

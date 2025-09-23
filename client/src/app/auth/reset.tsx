@@ -42,7 +42,7 @@ const Reset = () => {
           ?
           null
           :
-          <div className="text-sky-900 text-sm w-fit m-auto bg-white/50 rounded-lg shadow-md backdrop-blur-md backdrop-brightness-110 backdrop-saturate-125 flex flex-col gap-4 p-3 select-none">
+          <div className="text-sky-900 prompt">
             {
               success
                 ?

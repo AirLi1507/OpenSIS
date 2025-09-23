@@ -4,6 +4,10 @@
   font-family: "Ubuntu", "Noto Sans TC", sans-serif;
 }
 
+* {
+  scrollbar-width: none;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

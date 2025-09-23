@@ -22,7 +22,7 @@ const Root = () => {
   return (
     <div className="w-svw h-svh bg">
       <div className="w-full h-full backdrop-blur-xl backdrop-brightness-105 p-2">
-        <div className="w-full h-full bg rounded-xl inset-shadow-[0_0_8px_rgba(0,0,0,.25)] flex">
+        <div className="w-full h-full bg rounded-xl inset-shadow-[0_0_8px_rgba(0,0,0,.25)] flex box-border overflow-scroll">
           <Outlet />
         </div>
       </div>
