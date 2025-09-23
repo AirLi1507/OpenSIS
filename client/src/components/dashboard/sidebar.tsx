@@ -1,9 +1,10 @@
-import { IconAddressBook, IconHome, type Icon } from "@tabler/icons-react"
+import { IconAddressBook, IconBallBasketball, IconBooks, IconCheckbox, IconDoorExit, IconFilePencil, IconHome, IconPhoto, IconSettings, IconShield, IconUser, type Icon } from "@tabler/icons-react"
 import { Link, useLocation, type To } from "react-router"
 import "./sidebar.css"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Logo from "../brand/logo"
 import Title from "../brand/title"
+import UserContext from "../../contexts/user"
 
 interface Tab {
   to: To
@@ -33,8 +34,9 @@ const Tab = (prop: Tab) => {
 }
 
 const Sidebar = () => {
+  const { chi_name, eng_name, form, className, classNo, role } = useContext(UserContext)
   return (
-    <nav className="bg-sky-50/25 shadow-lg flex flex-col px-4">
+    <nav>
       <div className="mx-auto mt-10 mb-8">
         <Logo size={72} />
       </div>
@@ -43,6 +45,29 @@ const Sidebar = () => {
       </div>
       <Tab to="" icon={IconHome} text="Home" />
       <Tab to="profile" icon={IconAddressBook} text="Profile" />
+      <Tab to="homework" icon={IconFilePencil} text="Homework" />
+      <Tab to="ec" icon={IconBallBasketball} text="Extension Curriculum" />
+      <Tab to="reading" icon={IconBooks} text="Reading" />
+      <Tab to="ss" icon={IconCheckbox} text="Subject Selection" />
+      <div className="mt-auto flex flex-col">
+        <Tab to="/auth/logout" icon={IconDoorExit} text="Logout" />
+        {
+          Number(role) > 0
+          &&
+          <>
+            <Tab to="album" icon={IconPhoto} text="Album" />
+            <Tab to="admin" icon={IconShield} text="Administration" />
+          </>
+        }
+        <Tab to="settings" icon={IconSettings} text="Settings" />
+        <Tab to="#" icon={IconUser} text={
+          Number(role) > 1
+            ?
+            `${chi_name && chi_name} ${eng_name}`
+            :
+            `${form}${className}-${classNo} ${chi_name && chi_name} ${eng_name}`
+        } />
+      </div>
     </nav>
   )
 }
