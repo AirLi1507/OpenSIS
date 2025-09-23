@@ -1,0 +1,17 @@
+@reference "../../index.css";
+
+form.card {
+  @apply w-60 m-auto bg-sky-300/20 rounded-lg shadow-md backdrop-blur-md backdrop-brightness-110 backdrop-saturate-125 flex flex-col gap-4 p-4 select-none
+}
+
+div.textbox {
+  @apply bg-white/20 hover:bg-white/45 focus-within:bg-white/45 rounded-sm inset-shadow-[0_0_4px_rgba(0,0,0,.25)] flex duration-250 p-2 box-border
+}
+
+button.submit {
+  @apply text-sky-800/85 hover:text-white font-bold bg-white/50 hover:bg-sky-600/75 rounded-sm shadow-sm duration-250 p-2 cursor-pointer
+}
+
+a {
+  @apply text-sky-800/85 hover:text-sky-50 text-sm font-semibold w-fit -my-0.5 hover:drop-shadow-[1px_1px_0.5px_rgba(0,0,0,.25)] flex gap-1 duration-100
+}
