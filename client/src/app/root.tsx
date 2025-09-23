@@ -11,7 +11,9 @@ const Root = () => {
         navigate("/dashboard")
         return
       } else {
-        navigate("/auth/login")
+        if (!location.pathname.includes("/auth/")) {
+          navigate("/auth/login")
+        }
         return
       }
     }
