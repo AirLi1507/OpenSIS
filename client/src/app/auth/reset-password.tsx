@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 import { useNavigate, useSearchParams } from "react-router"
 import Logo from "../../components/brand/logo"
 import Title from "../../components/brand/title"
@@ -6,6 +7,8 @@ import { IconPassword, IconZoomCheck } from "@tabler/icons-react"
 import "./index.css"
 
 const ResetPassword = () => {
+  const { t } = useTranslation()
+
   const [password, setPassword] = useState<string>("")
   const [consistence, setConsistence] = useState<boolean | undefined>()
   const [success, setSuccess] = useState<boolean | undefined>()
@@ -50,13 +53,13 @@ const ResetPassword = () => {
         <Title />
         <div className="text-sky-700/85 textbox">
           <IconPassword />
-          <input onChange={(e) => { setPassword(e.target.value); consistencyCheck() }} required placeholder="New Password" className="w-full ml-1 outline-none" />
+          <input onChange={(e) => { setPassword(e.target.value); consistencyCheck() }} required placeholder={t("auth.new_pw")} className="w-full ml-1 outline-none" />
         </div>
         <div className="text-sky-700/85 textbox">
           <IconZoomCheck />
-          <input onChange={consistencyCheck} required placeholder="Confirm Password" className="w-full ml-1 outline-none" />
+          <input onChange={consistencyCheck} required placeholder={t("auth.confirm_pw")} className="w-full ml-1 outline-none" />
         </div>
-        <button className="submit">Confirm</button>
+        <button className="submit">{t("auth.confirm")}</button>
       </form>
       {
         consistence == undefined

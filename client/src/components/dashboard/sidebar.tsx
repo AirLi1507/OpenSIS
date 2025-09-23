@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react"
 import Logo from "../brand/logo"
 import Title from "../brand/title"
 import UserContext from "../../contexts/user"
+import { useTranslation } from "react-i18next"
 
 interface Tab {
   to: To
@@ -34,7 +35,10 @@ const Tab = (prop: Tab) => {
 }
 
 const Sidebar = () => {
+  const { t } = useTranslation()
+
   const { chi_name, eng_name, form, className, classNo, role } = useContext(UserContext)
+
   return (
     <nav>
       <div className="mx-auto mt-10 mb-8">
@@ -43,23 +47,23 @@ const Sidebar = () => {
       <div className="mx-auto mb-4">
         <Title />
       </div>
-      <Tab to="" icon={IconHome} text="Home" />
-      <Tab to="profile" icon={IconAddressBook} text="Profile" />
-      <Tab to="homework" icon={IconFilePencil} text="Homework" />
-      <Tab to="ec" icon={IconBallBasketball} text="Extension Curriculum" />
-      <Tab to="reading" icon={IconBooks} text="Reading" />
-      <Tab to="ss" icon={IconCheckbox} text="Subject Selection" />
+      <Tab to="" icon={IconHome} text={t("tab_name.home")} />
+      <Tab to="profile" icon={IconAddressBook} text={t("tab_name.profile")} />
+      <Tab to="homework" icon={IconFilePencil} text={t("tab_name.homework")} />
+      <Tab to="ec" icon={IconBallBasketball} text={t("tab_name.ec")} />
+      <Tab to="reading" icon={IconBooks} text={t("tab_name.reading")} />
+      <Tab to="ss" icon={IconCheckbox} text={t("tab_name.ss")} />
       <div className="mt-auto flex flex-col">
-        <Tab to="/auth/logout" icon={IconDoorExit} text="Logout" />
+        <Tab to="/auth/logout" icon={IconDoorExit} text={t("auth.logout")} />
         {
           Number(role) > 0
           &&
           <>
-            <Tab to="album" icon={IconPhoto} text="Album" />
-            <Tab to="admin" icon={IconShield} text="Administration" />
+            <Tab to="album" icon={IconPhoto} text={t("tab_name.album")} />
+            <Tab to="admin" icon={IconShield} text={t("tab_name.admin")} />
           </>
         }
-        <Tab to="settings" icon={IconSettings} text="Settings" />
+        <Tab to="settings" icon={IconSettings} text={t("tab_name.settings")} />
         <Tab to="#" icon={IconUser} text={
           Number(role) > 1
             ?

@@ -1,12 +1,14 @@
 import { useState } from "react"
-import { useNavigate } from "react-router"
+import { useNavigate, Link } from "react-router"
+import { useTranslation } from "react-i18next"
 import Logo from "../../components/brand/logo"
 import Title from "../../components/brand/title"
-import { Link } from "react-router"
 import { IconEye, IconEyeOff, IconKey, IconLockQuestion, IconUser } from "@tabler/icons-react"
 import "./index.css"
 
 const Login = () => {
+  const { t } = useTranslation()
+
   const [uid, setUid] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [visible, setVisible] = useState<boolean>(false)
@@ -41,11 +43,11 @@ const Login = () => {
       <Title />
       <div className="text-sky-700/85 textbox">
         <IconUser stroke={1.5} />
-        <input onChange={(e) => { setUid(e.target.value) }} required type="text" placeholder="Username" className="w-full ml-1 outline-none" />
+        <input onChange={(e) => { setUid(e.target.value) }} required type="text" placeholder={t("auth.username")} className="w-full ml-1 outline-none" />
       </div>
       <div className="text-sky-700/85 textbox">
         <IconKey stroke={1.5} />
-        <input onChange={(e) => { setPassword(e.target.value) }} required minLength={6} type={visible ? "text" : "password"} placeholder="Password" className="w-full ml-1 outline-none" />
+        <input onChange={(e) => { setPassword(e.target.value) }} required minLength={6} type={visible ? "text" : "password"} placeholder={t("auth.password")} className="w-full ml-1 outline-none" />
         <button type="button" onClick={() => setVisible(!visible)} className="cursor-pointer">
           {
             visible
@@ -56,10 +58,10 @@ const Login = () => {
           }
         </button>
       </div>
-      <button type="submit" className="submit">Login</button>
+      <button type="submit" className="submit">{t("auth.login")}</button>
       <Link to="/auth/reset" className="anchor">
         <IconLockQuestion stroke={1.75} size={20} />
-        <span>Forget Password?</span>
+        <span>{t("auth.forget_pw")}</span>
       </Link>
     </form>
   )

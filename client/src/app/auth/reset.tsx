@@ -4,8 +4,11 @@ import Title from "../../components/brand/title"
 import { Link } from "react-router"
 import { IconMail, IconSignLeft } from "@tabler/icons-react"
 import "./index.css"
+import { useTranslation } from "react-i18next"
 
 const Reset = () => {
+  const { t } = useTranslation()
+
   const [email, setEmail] = useState<string>("")
   const [success, setSuccess] = useState<boolean | undefined>()
 
@@ -32,12 +35,12 @@ const Reset = () => {
         <Title />
         <div className="text-sky-700/85 textbox">
           <IconMail stroke={1.5} />
-          <input onChange={(e) => setEmail(e.target.value)} required type="email" placeholder="Email" className="w-full ml-1 outline-none" />
+          <input onChange={(e) => setEmail(e.target.value)} required type="email" placeholder={t("auth.email")} className="w-full ml-1 outline-none" />
         </div>
-        <button type="submit" className="submit">Reset</button>
+        <button type="submit" className="submit">{t("auth.reset")}</button>
         <Link to="/auth/login" className="anchor">
           <IconSignLeft stroke={1.75} size={20} />
-          <span>Go back</span>
+          <span>{t("auth.go_back")}</span>
         </Link>
       </form>
       {

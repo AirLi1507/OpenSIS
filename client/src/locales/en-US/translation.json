@@ -1,0 +1,26 @@
+{
+  "auth": {
+    "username": "Username",
+    "password": "Password",
+    "login": "Login",
+    "forget_pw": "Forget password?",
+    "email": "Email",
+    "reset": "Reset",
+    "go_back": "Go back",
+    "new_pw": "New Password",
+    "confirm_pw": "Confirm Password",
+    "confirm": "Confirm",
+    "logout": "Logout"
+  },
+  "tab_name": {
+    "home": "Home",
+    "profile": "Profile",
+    "homework": "Homework",
+    "ec": "Extension Curriculum",
+    "reading": "Reading",
+    "ss": "Subject Selection",
+    "album": "Album",
+    "admin": "Administration",
+    "settings": "Settings"
+  }
+}
