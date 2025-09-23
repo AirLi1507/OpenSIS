@@ -1,5 +1,9 @@
 @reference "../../index.css";
 
+nav {
+  @apply bg-sky-50/25 shadow-lg flex flex-col px-4
+}
+
 a.tab {
   @apply w-60 rounded-full flex gap-2 items-center p-4 py-3 duration-250
 }
