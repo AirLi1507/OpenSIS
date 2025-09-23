@@ -8,7 +8,7 @@ const sendResetLink = async (email: string, token: string) => {
       to: email,
       subject: "Password reset link for OpenSIS account",
       text: "You may now reset your account password with the following link. If you didn't perform any related operations, please don't leak this link to anybody.",
-      html: `<a href="https://${process.env.HOST}/auth/reset?token=${token}">Reset link</a>`
+      html: `<a href="https://${process.env.HOST}/auth/reset-password?token=${token}">Reset link</a>`
     })
     logger.info(`Password reset link sent to ${email} with the email id: ${info.messageId}`)
     return
