@@ -24,7 +24,7 @@ const requestReset = async (req: Request, res: Response) => {
     uid?: string
   }
   try {
-    const [row] = await connection.query<Uid[]>("select distinct uid from user where email = ?;", [email])
+    const [row] = await connection.query<Uid[]>("select uid from user where email = ?;", [email])
     if (!row.length) {
       res.status(401).json({
         error: "Invalid email."
