@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useNavigate, useSearchParams } from "react-router"
 import Logo from "../../components/brand/logo"
@@ -28,6 +28,9 @@ const ResetPassword = () => {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault()
+    if (success != undefined) {
+      return
+    }
     if (!consistence) {
       return
     }
@@ -45,6 +48,12 @@ const ResetPassword = () => {
     return
   }
 
+  useEffect(() => {
+    if (!searchParams.get("token")) {
+      navigate("/auth/reset")
+    }
+  }, [])
+
   return (
     <div className="m-auto flex flex-col gap-4">
       <form onSubmit={submit} className="card">
@@ -60,7 +69,7 @@ const ResetPassword = () => {
           <IconZoomCheck />
           <input onChange={consistencyCheck} required placeholder={t("auth.confirm_pw")} className="w-full ml-1 outline-none" />
         </div>
-        <button className="submit">{t("auth.confirm")}</button>
+        <button className="submit" disabled={success}>{t("auth.confirm")}</button>
       </form>
       {
         consistence == undefined
