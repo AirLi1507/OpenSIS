@@ -8,21 +8,23 @@ const Root = () => {
     async function refresh() {
       const req = await fetch("/api/v1/auth/refresh", { credentials: "include" })
       if (req.ok) {
-        navigate("/dashboard")
-        return
+        if (!location.pathname.includes("/dashboard/")) {
+          navigate("/dashboard")
+        }
+
       } else {
         if (!location.pathname.includes("/auth/")) {
           navigate("/auth/login")
         }
-        return
       }
+      return
     }
     refresh()
   }, [])
   return (
     <div className="w-svw h-svh bg">
-      <div className="w-full h-full backdrop-blur-xl backdrop-brightness-105 p-2">
-        <div className="w-full h-full bg rounded-xl inset-shadow-[0_0_8px_rgba(0,0,0,.25)] flex box-border overflow-scroll">
+      <div className="w-full h-full dark:bg-black/50 backdrop-blur-xl backdrop-brightness-105 p-2">
+        <div className="w-full h-full bg rounded-xl inset-shadow-[0_0_8px_rgba(0,0,0,.25)] dark:inset-shadow-none flex box-border overflow-scroll">
           <Outlet />
         </div>
       </div>
