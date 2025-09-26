@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant hover (&:hover);
+
 :root {
   font-family: "Ubuntu", "Noto Sans TC", sans-serif;
 }

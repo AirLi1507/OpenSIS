@@ -24,7 +24,8 @@ export default defineConfig({
             name: "Noto Sans TC",
             defer: true
           }
-        ]
+        ],
+        preconnect: true
       }
     })
   ],
@@ -43,7 +44,7 @@ export default defineConfig({
   },
   build: {
     target: "esnext",
-    cssMinify: "lightningcss",
+    cssMinify: "esbuild",
     minify: "oxc",
     emptyOutDir: true
   }
