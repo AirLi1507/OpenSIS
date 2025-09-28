@@ -4,6 +4,7 @@
 
 :root {
   font-family: "Ubuntu", "Noto Sans TC", sans-serif;
+  @apply dark:text-white;
 }
 
 * {
