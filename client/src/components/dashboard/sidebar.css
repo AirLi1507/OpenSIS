@@ -1,9 +1,17 @@
 @reference "../../index.css";
 
 nav {
-  @apply bg-sky-50/25 shadow-lg flex flex-col px-4 pb-4 box-border overflow-scroll
+  @apply min-w-72 bg-sky-50/25 dark:bg-black/10 shadow-lg flex flex-col px-4 pb-4 box-border overflow-scroll duration-500
 }
 
 a.tab {
   @apply w-64 rounded-full flex gap-2 items-center p-4 py-3 duration-250
+}
+
+button.toggle {
+  @apply my-auto hover:bg-black/5 dark:hover:bg-white/5 rounded-xl py-2 duration-250 cursor-pointer
+}
+
+button#toggle {
+  @apply opacity-0 pointer-events-none
 }
