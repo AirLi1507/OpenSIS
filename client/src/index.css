@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
 @custom-variant hover (&:hover);
 
 :root {
   font-family: "Ubuntu", "Noto Sans TC", sans-serif;
-  @apply dark:text-white;
 }
 
 * {
+  @apply dark:text-white box-border;
   scrollbar-width: none;
 }
 

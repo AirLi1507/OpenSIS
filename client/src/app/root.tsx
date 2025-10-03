@@ -1,9 +1,13 @@
 import { Outlet, useNavigate } from "react-router"
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 import "./root.css"
+import ThemeContext from "../contexts/theme"
 
 const Root = () => {
+  const { theme } = useContext(ThemeContext)
+
   const navigate = useNavigate()
+
   useEffect(() => {
     async function refresh() {
       const req = await fetch("/api/v1/auth/refresh", { credentials: "include" })
@@ -21,8 +25,9 @@ const Root = () => {
     }
     refresh()
   }, [])
+
   return (
-    <div className="w-svw h-svh bg">
+    <div className={`w-svw h-svh bg ${theme}`}>
       <div className="w-full h-full dark:bg-black/50 backdrop-blur-xl backdrop-brightness-105 p-2">
         <div className="w-full h-full bg rounded-xl inset-shadow-[0_0_8px_rgba(0,0,0,.25)] dark:inset-shadow-none flex box-border overflow-x-hidden overflow-y-scroll">
           <Outlet />

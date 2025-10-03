@@ -3,7 +3,10 @@ import { RouterProvider } from 'react-router'
 import router from './router'
 import "./index.css"
 import "./i18n.js"
+import ThemeProvider from './providers/theme.js'
 
 createRoot(document.getElementById('root') as HTMLDivElement).render(
-  <RouterProvider router={router} />
+  <ThemeProvider>
+    <RouterProvider router={router} />
+  </ThemeProvider>
 )
