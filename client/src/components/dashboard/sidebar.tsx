@@ -39,8 +39,6 @@ const Sidebar = () => {
 
   const { toggleSidebar } = useContext(DashboardContext)
 
-  console.log(toggleSidebar)
-
   const { chi_name, eng_name, form, className, classNo, role } = useContext(UserContext)
 
   return (
