@@ -1,11 +1,13 @@
 @reference "../../index.css";
 
 div#dashboard {
-  @apply min-w-full h-full bg-white/35 dark:bg-black/75 inset-shadow-[0_0_4px_rgba(0,0,0,.5)] rounded-xl backdrop-blur-xl flex duration-500 will-change-[min-width,transform]
+  @apply min-w-full max-w-full h-full bg-white/35 dark:bg-black/75 inset-shadow-[0_0_4px_rgba(0,0,0,.5)] dark:inset-shadow-none rounded-xl backdrop-blur-xl flex duration-500 will-change-[min-width,transform]
 }
 
 div#dashboard:not(.sidebar) {
-  @apply min-w-[calc(100%+18rem)] -translate-x-72
+  @apply min-w-[calc(100%+18rem)]  -translate-x-72;
+  transition-property: min-width, translate;
+  transition-delay: 0s, .05s;
 }
 
 div#dashboard:not(.sidebar) > nav {
@@ -17,5 +19,5 @@ div#dashboard:not(.sidebar) > div > button#toggle {
 }
 
 main {
-  @apply min-w-full duration-500
+  @apply w-full p-2 box-border overflow-y-scroll duration-500;
 }
