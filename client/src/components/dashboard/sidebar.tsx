@@ -5,7 +5,6 @@ import { useContext, useEffect, useState } from "react"
 import Logo from "../brand/logo"
 import UserContext from "../../contexts/user"
 import { useTranslation } from "react-i18next"
-import DashboardContext from "../../contexts/dashboard"
 
 interface Tab {
   to: To
@@ -37,9 +36,17 @@ const Tab = (prop: Tab) => {
 const Sidebar = () => {
   const { t } = useTranslation()
 
-  const { toggleSidebar } = useContext(DashboardContext)
-
   const { chi_name, eng_name, form, className, classNo, role } = useContext(UserContext)
+
+  function toggleSidebar() {
+    const dashboard = document.getElementById("dashboard")
+    if (!dashboard) {
+      return
+    }
+    dashboard.classList.toggle("sidebar")
+    requestAnimationFrame(() => { })
+    return
+  }
 
   return (
     <>
