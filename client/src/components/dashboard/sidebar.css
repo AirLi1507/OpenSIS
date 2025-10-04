@@ -5,7 +5,7 @@ nav {
 }
 
 a.tab {
-  @apply w-64 rounded-full flex gap-2 items-center p-4 py-3 duration-250
+  @apply dark:text-white w-64 rounded-full flex gap-2 items-center p-4 py-3 duration-250
 }
 
 button.toggle {
