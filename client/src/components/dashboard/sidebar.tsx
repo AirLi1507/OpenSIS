@@ -48,7 +48,7 @@ const Sidebar = () => {
           <Logo size={72} />
         </div>
         <div className="mx-auto mb-4">
-          <span className="text-sky-700 dark:text-sky-400 text-2xl font-bold mx-auto select-none">OpenSIS</span>
+          <span className="text-sky-700 dark:text-sky-400 text-2xl md:text-3xl font-bold mx-auto select-none">OpenSIS</span>
         </div>
         <Tab to="" icon={IconHome} text={t("tab_name.home")} />
         <Tab to="profile" icon={IconAddressBook} text={t("tab_name.profile")} />
@@ -75,13 +75,13 @@ const Sidebar = () => {
               `${form}${className}-${classNo} ${chi_name && chi_name} ${eng_name}`
           } />
         </div>
-        <div className="h-full ml-60 flex absolute top-0">
+        <div className="toggle ml-46.5 md:ml-60">
           <button onClick={toggleSidebar} aria-label="Sidebar Toggle" className="toggle">
             <IconChevronCompactLeft stroke={1.5} />
           </button>
         </div>
       </nav>
-      <div className="h-full ml-74 flex absolute top-0">
+      <div className="toggle ml-59 md:ml-74">
         <button onClick={toggleSidebar} aria-label="Sidebar Toggle" id="toggle" className="toggle">
           <IconChevronCompactRight stroke={1.5} />
         </button>

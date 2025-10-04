@@ -4,7 +4,7 @@ import "./root.css"
 import ThemeContext from "../contexts/theme"
 
 const Root = () => {
-  const { theme, setTheme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
 
   const navigate = useNavigate()
 
@@ -33,11 +33,13 @@ const Root = () => {
   }, [])
 
   return (
-    <div className={`w-svw h-svh bg ${theme}`}>
+    <div id="root" className={` ${theme}`}>
+      {/*
       <p className="bg-white m-4 p-2">{theme}</p>
       <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="bg-white m-4 border-2 p-2">set theme to {theme ? "dark" : "light"}</button>
-      <div className="w-full h-full dark:bg-black/50 backdrop-blur-xl backdrop-brightness-105 p-2">
-        <div className="w-full h-full bg rounded-xl inset-shadow-[0_0_8px_rgba(0,0,0,.25)] dark:inset-shadow-none flex box-border overflow-x-hidden overflow-y-scroll">
+      */}
+      <div id="outer">
+        <div id="inner">
           <Outlet />
         </div>
       </div>

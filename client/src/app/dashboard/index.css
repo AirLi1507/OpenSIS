@@ -1,11 +1,11 @@
 @reference "../../index.css";
 
 div#dashboard {
-  @apply min-w-full max-w-full h-full bg-white/35 dark:bg-black/75 inset-shadow-[0_0_4px_rgba(0,0,0,.5)] dark:inset-shadow-none rounded-xl backdrop-blur-xl flex duration-500 will-change-[min-width,transform]
+  @apply min-w-[calc(100%+14.25rem)] md:min-w-full h-full bg-white/35 dark:bg-black/75 inset-shadow-[0_0_4px_rgba(0,0,0,.5)] dark:inset-shadow-none rounded-xl backdrop-blur-xl flex duration-500 will-change-[min-width,transform]
 }
 
 div#dashboard:not(.sidebar) {
-  @apply min-w-[calc(100%+18rem)]  -translate-x-72;
+  @apply min-w-[calc(100%+14.25rem)] md:min-w-[calc(100%+18rem)] -translate-x-57 md:-translate-x-72 inset-shadow-none;
   transition-property: min-width, translate;
   transition-delay: 0s, .025s;
 }
@@ -18,6 +18,10 @@ div#dashboard:not(.sidebar) > div > button#toggle {
   @apply opacity-100 pointer-events-auto
 }
 
+div#dashboard:not(.sidebar) > main {
+  @apply rounded-xl inset-shadow-[0_0_4px_rgba(0,0,0,.5)] dark:inset-shadow-none;
+}
+
 main {
-  @apply dark:text-white w-full p-2 box-border overflow-y-scroll;
+  @apply dark:text-white w-full p-1.5 lg:p-2 box-border overflow-y-scroll duration-500;
 }
