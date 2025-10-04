@@ -7,7 +7,7 @@ div#dashboard {
 div#dashboard:not(.sidebar) {
   @apply min-w-[calc(100%+18rem)]  -translate-x-72;
   transition-property: min-width, translate;
-  transition-delay: 0s, .05s;
+  transition-delay: 0s, .025s;
 }
 
 div#dashboard:not(.sidebar) > nav {
@@ -19,5 +19,5 @@ div#dashboard:not(.sidebar) > div > button#toggle {
 }
 
 main {
-  @apply w-full p-2 box-border overflow-y-scroll duration-500;
+  @apply dark:text-white w-full p-2 box-border overflow-y-scroll;
 }

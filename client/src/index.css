@@ -8,7 +8,6 @@
 }
 
 * {
-  @apply dark:text-white box-border;
   scrollbar-width: none;
 }
 
