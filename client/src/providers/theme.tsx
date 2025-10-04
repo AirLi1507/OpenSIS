@@ -5,6 +5,11 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<"light" | "dark">("light")
 
   useEffect(() => {
+    const { theme } = localStorage as { theme?: "light" | "dark" }
+    if (theme) {
+      setTheme(theme)
+      return
+    }
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setTheme("dark")
     }
