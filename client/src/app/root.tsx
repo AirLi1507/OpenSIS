@@ -33,7 +33,7 @@ const Root = () => {
   }, [])
 
   return (
-    <div id="background" className={` ${theme}`}>
+    <div id="background" className={theme}>
       {/*
       <p className="bg-white m-4 p-2">{theme}</p>
       <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="bg-white m-4 border-2 p-2">set theme to {theme ? "dark" : "light"}</button>
